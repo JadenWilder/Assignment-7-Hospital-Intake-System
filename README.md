@@ -72,3 +72,10 @@ MinHeap()
   - Returns the most urgent patient without removing.
 - `print_heap() -> None`
   - Prints each patient and their urgency level.
+  ## Design Memo
+
+A binary tree is appropriate for representing the hospital's doctor reporting structure because it organizes relationships between doctors through parent and child nodes. Each doctor can have a left and right report, making the structure easy to visualize and navigate. The tree also allows the system to search for a parent doctor and insert a new doctor in a specific position.
+
+Preorder, inorder, and postorder traversals are useful for different software engineering tasks. Preorder visits the current node before its children, making it useful for copying a tree or displaying a hierarchy from top to bottom. Inorder visits the left subtree, current node, and right subtree. In a binary search tree, this traversal can return values in sorted order. Postorder visits children before the current node, making it useful for deleting a tree safely or processing dependent tasks before their parent.
+
+A min-heap helps simulate emergency intake because it automatically keeps the patient with the lowest urgency score at the root. Since a score of 1 represents the highest priority, the most urgent patient can be selected efficiently. Inserting and removing patients take O(log n) time, while checking the next patient takes O(1) time. These operations make heaps useful when patients arrive continuously and staff must determine who should be treated next. In a real hospital, clinical staff must determine urgency accurately, and software should support rather than replace professional medical judgment.
